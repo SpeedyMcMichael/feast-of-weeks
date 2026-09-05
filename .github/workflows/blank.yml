@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install nasm
+        run: sudo apt-get update && sudo apt-get install -y nasm
+
+      - name: Make scripts executable
+        run: chmod +x build.sh clean.sh test.sh
+
+      - name: Build
+        run: ./build.sh
+
+      - name: Run test suite
+        run: ./test.sh
