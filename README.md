@@ -6,6 +6,11 @@ a util in raw amd64 sysv assembly that calculates the date of the feast of weeks
 
 run `./build.sh` (you may need to add executable permissions via `chmod +x build.sh`)
 
+### build deps
+
+* nasm
+* binutils
+
 ## clean source dir
 
 run `./clean.sh`
